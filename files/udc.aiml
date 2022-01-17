@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- Saludo inicial -->
+  <category>
+      <pattern>HOLA</pattern>
+      <template>Hola, buenos dias ¿Necesitas informacion sobre alguno de nuestros productos?</template>
+  </category>
+  
+    <category>
+      <pattern>HOLA BUENOS DIAS</pattern>
+      <template><srai>HOLA</srai></template>
+  </category>
+  
+    <category>
+      <pattern>BUENOS DIAS</pattern>
+      <template><srai>HOLA</srai></template>
+  </category>
+  
+  <category>
+      <pattern>SI</pattern>
+      <that>Hola, buenos dias ¿Necesitas informacion sobre alguno de nuestros productos</that>
+      <template>Genial! Tengo informacion sobre botas y piensos ¿Sobre cual te gustaria saber más?</template>
+  </category>
+  
+    <category>
+      <pattern>NO</pattern>
+      <that>Hola, buenos dias ¿Necesitas informacion sobre alguno de nuestros productos</that>
+      <template>Vale! Que tenga un buen dia!</template>
+  </category>
+  <!--Botas-->
+   <category>
+      <pattern>BOTAS</pattern>
+      <template>Tenemos botas de confort y de seguridad ¿cual deseas ver?</template>
+  </category>
+  <category>
+      <pattern>BOTA</pattern>
+      <template><srai>BOTAS</srai></template>
+  </category>
+  <category>
+        <pattern>*</pattern>
+        <that>Tenemos botas de confort y de seguridad ¿cual deseas ver</that>
+        <template>
+            <think>
+                <set name="botas"><star/></set>
+            </think>
+        <condition name="botas" value="confort">
+            Para botas de confort nosotros te recomendamos esta: <br/>
+            <card>
+                <image>https://socios.dcoop.es/imgProd/34017415.jpg</image>
+                <title>AG BOTA TERNERA MOD.203</title>
+                <subtitle>Disponemos de tallas desde la 38 a la 45</subtitle>
+                <button>
+                    <text>Ver en la web</text>
+                    <url>https://socios.dcoop.es/base.html#producto.34017415</url>
+                </button>
+            </card>Si quieres ver el resto de botas de confort que tenemos, pincha en el siguiente enlace
+                 <button>
+                    <text>Ver el resto de botas</text>
+                    <url>https://socios.dcoop.es/base.html#tienda.4</url>
+                </button>
+        </condition>
+        <condition name="botas" value="seguridad">
+             Para botas de seguridad nosotros te recomendamos esta: <br/>
+            <card>
+                <image>https://socios.dcoop.es/imgProd/34018453.jpg</image>
+                <title>BOTA SEGURIDAD EMERITA S1P 1688BSPM</title>
+                <subtitle>Disponemos de tallas desde la 38 a la 45</subtitle>
+                <button>
+                    <text>Ver en la web</text>
+                    <url>https://socios.dcoop.es/base.html#producto.34018453</url>
+                </button>
+            </card>Si quieres ver el resto de botas de seguridad que tenemos, pincha en el siguiente enlace
+                 <button>
+                    <text>Ver el resto de botas</text>
+                    <url>https://socios.dcoop.es/base.html#tienda.4</url>
+                </button>
+        </condition>
+        </template>
+  </category>
+  <!--Piensos-->
+  <category>
+      <pattern>PIENSOS</pattern>
+      <template>Tenemos piensos para perros, gatos y canarios ¿para que animal lo necesitas?</template>
+  </category>
+  <category>
+      <pattern>PIENSO</pattern>
+      <template><srai>PIENSOS</srai></template>
+  </category>
+  <category>
+        <pattern>*</pattern>
+        <that>Tenemos piensos para perros, gatos y canarios ¿para que animal lo necesitas</that>
+        <template>
+            <think>
+                <set name="piensos"><star/></set>
+            </think>
+        <condition name="piensos" value="perros">
+            De comida para perros nosotros te recomendamo este: <br/>
+            <card>
+                <image>https://socios.dcoop.es/imgProd/34021260.jpg</image>
+                <title>COMIDA PERROS SUMICOOP A.MTO.VERDE 20KG</title>
+                <subtitle></subtitle>
+                <button>
+                    <text>Ver en la web</text>
+                    <url>https://socios.dcoop.es/base.html#producto.34021260</url>
+                </button>
+            </card>Si quieres ver el resto de piensos para perros que tenemos, pincha en el siguiente enlace
+                 <button>
+                    <text>Ver el resto de piensos</text>
+                    <url>https://socios.dcoop.es/base.html#tienda.4</url>
+                </button>
+        </condition>
+        <condition name="piensos" value="gatos">
+            De comida para gatos nosotros te recomendamo este: <br/>
+            <card>
+                <image>https://socios.dcoop.es/imgProd/34021264.jpg</image>
+                <title>COMIDA GATOS AMITY MANTENIMIENTO 4KG</title>
+                <subtitle></subtitle>
+                <button>
+                    <text>Ver en la web</text>
+                    <url>https://socios.dcoop.es/base.html#producto.34021264</url>
+                </button>
+            </card>Si quieres ver el resto de piensos para gatos que tenemos, pincha en el siguiente enlace
+                 <button>
+                    <text>Ver el resto de piensos</text>
+                    <url>https://socios.dcoop.es/base.html#tienda.4</url>
+                </button>
+        </condition>
+        <condition name="piensos" value="canarios">
+            De comida para gatos nosotros te recomendamo este: <br/>
+            <card>
+                <image>https://socios.dcoop.es/imgProd/34021081.jpg</image>
+                <title>MIX MIXTURA CANARIO 1 Kg</title>
+                <subtitle></subtitle>
+                <button>
+                    <text>Ver en la web</text>
+                    <url>https://socios.dcoop.es/base.html#producto.34021081</url>
+                </button>
+            </card>Si quieres ver el resto de piensos para canarios que tenemos, pincha en el siguiente enlace
+                <button>
+                    <text>Ver el resto de piensos</text>
+                    <url>https://socios.dcoop.es/base.html#tienda.4</url>
+                </button>
+        </condition>
+        </template>
+  </category>
+  <category>
+      <pattern>ADIOS</pattern>
+      <template>Adios, que tenga buen dia!</template>
+  </category>
+</aiml>
